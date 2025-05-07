@@ -1,0 +1,25 @@
+body {
+  font-family: sans-serif;
+  background-color: #121212;
+  color: #ffffff;
+  margin: 0;
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.container {
+  text-align: center;
+  max-width: 600px;
+}
+#status {
+  font-size: 2em;
+  margin-bottom: 1rem;
+}
+#message {
+  font-size: 1.2em;
+}
+.low { color: #00ff00; }
+.medium { color: #ffaa00; }
+.high { color: #ff3333; }
