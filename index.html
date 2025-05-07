@@ -27,9 +27,9 @@
       max-width: 600px;
     }
     .status {
-      font-size: 2em;
+      font-size: 2.5em;
       font-weight: bold;
-      margin-bottom: 0.5em;
+      margin-bottom: 0.4em;
     }
     .LOW {
       color: green;
@@ -41,19 +41,20 @@
       color: red;
     }
     .message {
-      font-size: 1.25em;
-      margin-bottom: 1em;
+      font-size: 1.2em;
+      margin-bottom: 1.5em;
     }
     .btn {
-      padding: 0.75em 1.5em;
+      padding: 1em 2em;
       font-size: 1em;
       font-weight: bold;
       color: #ffffff;
       background-color: #007bff;
       border: none;
-      border-radius: 8px;
+      border-radius: 10px;
       cursor: pointer;
       text-decoration: none;
+      display: inline-block;
     }
     .btn:hover {
       background-color: #0056b3;
@@ -64,7 +65,7 @@
   <div class="container">
     <div class="status" id="status">Henter status...</div>
     <div class="message" id="message">Vent...</div>
-    <a href="community.html" class="btn">Se fællesskabsskærm</a>
+    <a href="community.html" class="btn">Se fællesskabets skærm</a>
   </div>
   <script>
     fetch("status.json")
