@@ -1,23 +1,20 @@
+
 <!DOCTYPE html>
 <html lang="da">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EnergiFællesskab</title>
-    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <div class="card">
-            <img src="assets/icon.png" alt="Ikon" class="icon" />
-            <h1 id="status">LOW</h1>
-            <p id="message">
-                Energifællesskabet sørger i dag for, at hallen kan lyse og varme hele aftenen – med grøn strøm fra solen. Tak for at være med!
-            </p>
-            <p id="weather">UV: 6, Partly Cloudy</p>
-            <button onclick="goBack()">Tilbage</button>
-        </div>
+    <div class="card">
+        <img src="icon.png" alt="Ikon" class="icon">
+        <h1 id="status">Henter...</h1>
+        <p id="message">Henter besked...</p>
+        <p id="weather">Vejrinformation...</p>
+        <button onclick="goToCommunity()">Se fællesskabet</button>
     </div>
-    <script src="js/script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
