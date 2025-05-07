@@ -2,92 +2,56 @@
 <!DOCTYPE html>
 <html lang="da">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Energifællesskab</title>
-    <style>
-        body {
-            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-            background-color: #1e1e1e;
-            color: #f9f9f9;
-            margin: 0;
-            padding: 2rem;
-        }
-        .status {
-            font-size: 2rem;
-            margin-bottom: 1rem;
-        }
-        .message {
-            font-size: 1.5rem;
-            line-height: 1.6;
-            font-style: italic;
-        }
-        .low {
-            color: #00cc66;
-        }
-        .medium {
-            color: #ffcc00;
-        }
-        .high {
-            color: #ff3333;
-        }
-        .status-icon {
-            font-size: 2.5rem;
-            margin-right: 0.5rem;
-            vertical-align: middle;
-        }
-        #community-screen {
-            display: none;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Energifællesskab Status</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: url('bg.jpg') no-repeat center center fixed;
+      background-size: cover;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      color: #333;
+      text-align: center;
+    }
+    .container {
+      background-color: rgba(255, 255, 255, 0.9);
+      padding: 2em;
+      border-radius: 15px;
+      max-width: 600px;
+    }
+    img.icon {
+      width: 100px;
+      margin-bottom: 1em;
+    }
+    .status {
+      font-size: 2em;
+      font-weight: bold;
+      margin-bottom: 0.5em;
+    }
+    .message {
+      font-size: 1.25em;
+      margin-bottom: 1em;
+    }
+    .weather {
+      font-size: 1em;
+      color: #666;
+    }
+  </style>
 </head>
 <body>
-    <div id="status-screen">
-        <div id="statusMessage" class="status"><span class="status-icon">⚡</span>Status opdateres...</div>
-        <div id="statusData" class="message">Henter data...</div>
-    </div>
-    <div id="community-screen" class="message"></div>
-
-    <script>
-        let showingCommunity = false;
-
-        document.body.addEventListener("click", () => {
-            showingCommunity = !showingCommunity;
-            document.getElementById("community-screen").style.display = showingCommunity ? "block" : "none";
-            document.getElementById("status-screen").style.display = showingCommunity ? "none" : "block";
-        });
-
-        fetch("status.json")
-            .then(response => response.json())
-            .then(data => {
-                const status = data.status;
-                const iconMap = {
-                    "LOW": "🟢",
-                    "MEDIUM": "🟡",
-                    "HIGH": "🔴"
-                };
-                const messages = {
-                    "LOW": "Energifællesskabet sørger i dag for, at hallen kan lyse og varme hele aftenen – med grøn strøm fra solen. Tak for at være med!",
-                    "MEDIUM": "Der er strøm nok i fællesskabet til håndboldtræning og aktiviteter i hallen – takket være lokal solenergi.",
-                    "HIGH": "Produktionen er lav i dag – men energifællesskabet er stadig med til at holde caféen og petanque i gang på grøn strøm."
-                };
-
-                const statusText = {
-                    "LOW": "Brug løs af strømmen",
-                    "MEDIUM": "Brug med omtanke",
-                    "HIGH": "Vent med forbrug"
-                };
-
-                document.getElementById("statusMessage").innerHTML = `<span class="status-icon">${iconMap[status]}</span>${statusText[status]}`;
-                document.getElementById("statusMessage").className = "status " + status.toLowerCase();
-                document.getElementById("statusData").textContent = data.details;
-
-                document.getElementById("community-screen").textContent = messages[status];
-            })
-            .catch(error => {
-                document.getElementById("statusMessage").textContent = "Fejl i data!";
-                document.getElementById("statusData").textContent = error.toString();
-            });
-    </script>
+  <div class="container">
+    <img src="icon.png" alt="Sol ikon" class="icon"/>
+    <div class="status" id="status">Henter status...</div>
+    <div class="message" id="message"></div>
+    <div class="weather" id="weather"></div>
+  </div>
+  <script src="script.js"></script>
 </body>
 </html>
