@@ -23,3 +23,16 @@ body {
 .low { color: #00ff00; }
 .medium { color: #ffaa00; }
 .high { color: #ff3333; }
+button {
+  font-size: 1.2em;
+  padding: 0.5em 1em;
+  margin-top: 1em;
+  background-color: #1a73e8;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+button:hover {
+  background-color: #155ab6;
+}

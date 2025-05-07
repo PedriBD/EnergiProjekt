@@ -67,5 +67,30 @@ function vurderVejrFaktor(uv, is_day, condition) {
   return Math.round(base * 100) / 100;
 }
 
+function toggleCommunity() {
+  const el = document.getElementById("community");
+  const statusEl = document.getElementById("status");
+
+  if (el.style.display === "none") {
+    const statusText = statusEl.textContent.toLowerCase();
+    let msg = "";
+
+    if (statusText.includes("grøn strøm")) {
+      msg = "🌞 Energifællesskabet sørger i dag for at håndbold kan træne hele aftenen med grøn lokalproduceret strøm. Tak for at være med!";
+    } else if (statusText.includes("med omtanke")) {
+      msg = "⚠️ Solen hjælper lidt – energifællesskabet dækker dele af forbruget. Det betyder noget, at du tænker over dit elforbrug.";
+    } else {
+      msg = "⛅ I dag er der mindre sol – men dit fællesskab arbejder stadig for grøn strøm. Tak for at være en del af det!";
+    }
+
+    el.textContent = msg;
+    el.style.display = "block";
+    statusEl.style.display = "none";
+  } else {
+    el.style.display = "none";
+    statusEl.style.display = "block";
+  }
+}
+
 hentData();
 setInterval(hentData, 5 * 60 * 1000);
