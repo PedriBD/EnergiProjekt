@@ -2,19 +2,92 @@
 <!DOCTYPE html>
 <html lang="da">
 <head>
-  <meta charset="UTF-8">
-  <title>Energifællesskab</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Energifællesskab</title>
+    <style>
+        body {
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            background-color: #1e1e1e;
+            color: #f9f9f9;
+            margin: 0;
+            padding: 2rem;
+        }
+        .status {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+        .message {
+            font-size: 1.5rem;
+            line-height: 1.6;
+            font-style: italic;
+        }
+        .low {
+            color: #00cc66;
+        }
+        .medium {
+            color: #ffcc00;
+        }
+        .high {
+            color: #ff3333;
+        }
+        .status-icon {
+            font-size: 2.5rem;
+            margin-right: 0.5rem;
+            vertical-align: middle;
+        }
+        #community-screen {
+            display: none;
+        }
+    </style>
 </head>
 <body>
-  <div class="container">
-    <div id="status" class="status-text">Indlæser status...</div>
-    <div id="message" class="message-text">Henter data...</div>
-    <div id="community" class="community-text" style="display:none;">
-      ⚡ Fællesskabets solceller har i dag produceret strøm nok til at håndbold kan træne hele aftenen med grøn lokalproduceret strøm. Tak for at være med!
+    <div id="status-screen">
+        <div id="statusMessage" class="status"><span class="status-icon">⚡</span>Status opdateres...</div>
+        <div id="statusData" class="message">Henter data...</div>
     </div>
-    <button onclick="toggleCommunity()">Vis fællesskab</button>
-  </div>
-  <script src="script.js"></script>
+    <div id="community-screen" class="message"></div>
+
+    <script>
+        let showingCommunity = false;
+
+        document.body.addEventListener("click", () => {
+            showingCommunity = !showingCommunity;
+            document.getElementById("community-screen").style.display = showingCommunity ? "block" : "none";
+            document.getElementById("status-screen").style.display = showingCommunity ? "none" : "block";
+        });
+
+        fetch("status.json")
+            .then(response => response.json())
+            .then(data => {
+                const status = data.status;
+                const iconMap = {
+                    "LOW": "🟢",
+                    "MEDIUM": "🟡",
+                    "HIGH": "🔴"
+                };
+                const messages = {
+                    "LOW": "Energifællesskabet sørger i dag for, at hallen kan lyse og varme hele aftenen – med grøn strøm fra solen. Tak for at være med!",
+                    "MEDIUM": "Der er strøm nok i fællesskabet til håndboldtræning og aktiviteter i hallen – takket være lokal solenergi.",
+                    "HIGH": "Produktionen er lav i dag – men energifællesskabet er stadig med til at holde caféen og petanque i gang på grøn strøm."
+                };
+
+                const statusText = {
+                    "LOW": "Brug løs af strømmen",
+                    "MEDIUM": "Brug med omtanke",
+                    "HIGH": "Vent med forbrug"
+                };
+
+                document.getElementById("statusMessage").innerHTML = `<span class="status-icon">${iconMap[status]}</span>${statusText[status]}`;
+                document.getElementById("statusMessage").className = "status " + status.toLowerCase();
+                document.getElementById("statusData").textContent = data.details;
+
+                document.getElementById("community-screen").textContent = messages[status];
+            })
+            .catch(error => {
+                document.getElementById("statusMessage").textContent = "Fejl i data!";
+                document.getElementById("statusData").textContent = error.toString();
+            });
+    </script>
 </body>
 </html>

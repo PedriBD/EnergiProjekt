@@ -1,4 +1,5 @@
+
 {
-  "status": "LOW",
-  "message": "⚡ Fællesskabets solceller har i dag produceret strøm nok til 1700 timers brug i hallen – og sparet 125 kg CO₂. Tak for at være med!"
+  "status": "HIGH",
+  "details": "Solproduktionen er lav lige nu. Forbrug venligst med omtanke."
 }
