@@ -2,18 +2,19 @@
 <!DOCTYPE html>
 <html lang="da">
 <head>
-    <meta charset="UTF-8">
-    <title>Energifællesskab</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <title>Energifællesskab</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="status-section green">
-        <div class="icon">🌞</div>
-        <div class="status-text">Grøn strøm – god produktion</div>
+  <div class="container">
+    <div id="status" class="status-text">Indlæser status...</div>
+    <div id="message" class="message-text">Henter data...</div>
+    <div id="community" class="community-text" style="display:none;">
+      ⚡ Fællesskabets solceller har i dag produceret strøm nok til at håndbold kan træne hele aftenen med grøn lokalproduceret strøm. Tak for at være med!
     </div>
-    <div class="message-section">
-        <p>⚡ Fællesskabets solceller har i dag produceret strøm nok til at håndbolden kan træne hele aftenen med lokal grøn strøm.</p>
-        <p>💨 Det svarer til en CO₂-besparelse på 125 kg!</p>
-    </div>
+    <button onclick="toggleCommunity()">Vis fællesskab</button>
+  </div>
+  <script src="script.js"></script>
 </body>
 </html>

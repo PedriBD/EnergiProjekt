@@ -1,46 +1,57 @@
 
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background: #f4f4f4;
-    color: #222;
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #f4f4f4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
 
-.status-section {
-    padding: 30px 20px;
-    text-align: center;
-    color: white;
-}
-
-.status-section.green {
-    background-color: #b1d7b4;
-    color: #003300;
-}
-
-.status-section.orange {
-    background-color: #f2c57c;
-    color: #663c00;
-}
-
-.status-section.red {
-    background-color: #f18f88;
-    color: #660000;
-}
-
-.icon {
-    font-size: 60px;
-    margin-bottom: 10px;
+.container {
+  text-align: center;
+  background: #ffffff;
+  padding: 3vw;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  max-width: 90vw;
+  width: 90vw;
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .status-text {
-    font-size: 28px;
-    font-weight: bold;
+  font-size: 3vw;
+  margin-bottom: 1.5vw;
+  font-weight: bold;
 }
 
-.message-section {
-    padding: 30px 25px;
-    font-size: 20px;
-    line-height: 1.6;
-    background: white;
+.low { color: #2e7d32; }
+.medium { color: #ef6c00; }
+.high { color: #c62828; }
+
+.message-text,
+.community-text {
+  font-size: 2vw;
+  margin: 1.5vw 0;
+  line-height: 1.5;
+}
+
+button {
+  background-color: #1a73e8;
+  color: white;
+  border: none;
+  padding: 1vw 2vw;
+  font-size: 2vw;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 2vw;
+}
+
+button:hover {
+  background-color: #155ab6;
 }
