@@ -31,6 +31,15 @@
       font-weight: bold;
       margin-bottom: 0.5em;
     }
+    .LOW {
+      color: green;
+    }
+    .MEDIUM {
+      color: orange;
+    }
+    .HIGH {
+      color: red;
+    }
     .message {
       font-size: 1.25em;
       margin-bottom: 1em;
@@ -57,6 +66,19 @@
     <div class="message" id="message">Vent...</div>
     <a href="community.html" class="btn">Se fællesskabsskærm</a>
   </div>
-  <script src="script.js"></script>
+  <script>
+    fetch("status.json")
+      .then(res => res.json())
+      .then(data => {
+        const statusEl = document.getElementById("status");
+        statusEl.textContent = data.status;
+        statusEl.classList.add(data.status);  // Tilføj farveklasse
+        document.getElementById("message").textContent = data.message;
+      })
+      .catch(error => {
+        document.getElementById("status").textContent = "Fejl!";
+        document.getElementById("message").textContent = "Kunne ikke hente data.";
+      });
+  </script>
 </body>
 </html>
