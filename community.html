@@ -2,61 +2,21 @@
 <!DOCTYPE html>
 <html lang="da">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Statusvisning</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
-  <style>
-    body {
-      font-family: 'Poppins', sans-serif;
-      margin: 0;
-      padding: 0;
-      background: #f0f4f8;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      color: #1a1a1a;
-      text-align: center;
-    }
-    .container {
-      background-color: #ffffff;
-      border-radius: 15px;
-      padding: 2em;
-      box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-      max-width: 600px;
-    }
-    .status {
-      font-size: 2em;
-      font-weight: bold;
-      margin-bottom: 0.5em;
-    }
-    .message {
-      font-size: 1.25em;
-      margin-bottom: 1em;
-    }
-    .btn {
-      padding: 0.75em 1.5em;
-      font-size: 1em;
-      font-weight: bold;
-      color: #ffffff;
-      background-color: #007bff;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-      text-decoration: none;
-    }
-    .btn:hover {
-      background-color: #0056b3;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <title>Fællesskabsstatus</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="container">
-    <div class="status" id="status">Henter status...</div>
-    <div class="message" id="message">Vent...</div>
-    <a href="community.html" class="btn">Se fællesskabsskærm</a>
-  </div>
-  <script src="script.js"></script>
+    <div class="card">
+        <img src="icon.png" alt="Ikon" class="icon">
+        <h1>🌞 Tak for dit bidrag!</h1>
+        <p>Energifællesskabet gør det muligt for mange aktiviteter at køre på grøn strøm i dag.</p>
+        <button onclick="goBack()">Tilbage</button>
+    </div>
+    <script>
+        function goBack() {
+            window.location.href = 'index.html';
+        }
+    </script>
 </body>
 </html>

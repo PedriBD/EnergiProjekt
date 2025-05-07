@@ -1,7 +1,6 @@
 
 {
-  "status": "LOW",
-  "message": "Energifællesskabet sørger i dag for, at hallen kan lyse og varme hele aftenen – med grøn strøm fra solen. Tak for at være med!",
-  "uv": 6,
-  "condition": "Partly Cloudy"
+    "status": "LOW",
+    "message": "Energifællesskabet sørger i dag for, at hallen kan lyse og varme hele aftenen – med grøn strøm fra solen. Tak for at være med!",
+    "weather": "UV: 6, Partly Cloudy"
 }
