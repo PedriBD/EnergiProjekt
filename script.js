@@ -1,17 +1,9 @@
+document.getElementById("to-community").addEventListener("click", () => {
+    document.getElementById("status-view").classList.add("hidden");
+    document.getElementById("community-view").classList.remove("hidden");
+});
 
-function goToCommunity() {
-    window.location.href = 'community.html';
-}
-
-fetch('status.json')
-  .then(response => response.json())
-  .then(data => {
-      document.getElementById('status').textContent = data.status;
-      document.getElementById('message').textContent = data.message;
-      document.getElementById('weather').textContent = data.weather;
-  })
-  .catch(error => {
-      document.getElementById('status').textContent = 'Fejl';
-      document.getElementById('message').textContent = 'Kunne ikke hente data.';
-      console.error('Fetch-fejl:', error);
-  });
+document.getElementById("to-status").addEventListener("click", () => {
+    document.getElementById("community-view").classList.add("hidden");
+    document.getElementById("status-view").classList.remove("hidden");
+});
