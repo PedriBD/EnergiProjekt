@@ -1,38 +1,46 @@
+
 body {
-  font-family: sans-serif;
-  background-color: #121212;
-  color: #ffffff;
-  margin: 0;
-  padding: 2rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f4f4f4;
+    color: #222;
 }
-.container {
-  text-align: center;
-  max-width: 600px;
+
+.status-section {
+    padding: 30px 20px;
+    text-align: center;
+    color: white;
 }
-#status {
-  font-size: 2em;
-  margin-bottom: 1rem;
+
+.status-section.green {
+    background-color: #b1d7b4;
+    color: #003300;
 }
-#message {
-  font-size: 1.2em;
+
+.status-section.orange {
+    background-color: #f2c57c;
+    color: #663c00;
 }
-.low { color: #00ff00; }
-.medium { color: #ffaa00; }
-.high { color: #ff3333; }
-button {
-  font-size: 1.2em;
-  padding: 0.5em 1em;
-  margin-top: 1em;
-  background-color: #1a73e8;
-  color: white;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
+
+.status-section.red {
+    background-color: #f18f88;
+    color: #660000;
 }
-button:hover {
-  background-color: #155ab6;
+
+.icon {
+    font-size: 60px;
+    margin-bottom: 10px;
+}
+
+.status-text {
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.message-section {
+    padding: 30px 25px;
+    font-size: 20px;
+    line-height: 1.6;
+    background: white;
 }
