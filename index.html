@@ -13,6 +13,7 @@
         const data = await res.json();
         document.getElementById("status-label").textContent = data.status;
         document.getElementById("status-message").textContent = data.message;
+        document.querySelector(".card").classList.add(data.level.toLowerCase());
       } catch (e) {
         document.getElementById("status-label").textContent = "Ingen data";
         document.getElementById("status-message").textContent = "Kunne ikke hente status.";
