@@ -1,8 +1,9 @@
 
 body {
     margin: 0;
-    font-family: sans-serif;
-    background: #eaf4f4;
+    font-family: 'Poppins', sans-serif;
+    background: url('background.jpg') no-repeat center center fixed;
+    background-size: cover;
 }
 .container {
     display: flex;
@@ -11,28 +12,25 @@ body {
     height: 100vh;
 }
 .card {
-    background: white;
+    background: rgba(255, 255, 255, 0.95);
     padding: 2em;
-    border-radius: 12px;
+    border-radius: 16px;
     text-align: center;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-    width: 90%;
     max-width: 500px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
 }
-.status.low {
-    color: green;
-}
-.status.medium {
-    color: orange;
-}
-.status.high {
-    color: red;
+.status.low { color: green; }
+.status.medium { color: orange; }
+.status.high { color: red; }
+.icon {
+    width: 100px;
+    margin-bottom: 1em;
 }
 button {
     margin-top: 1em;
-    padding: 0.8em 1.5em;
+    padding: 0.75em 1.5em;
     font-size: 1em;
-    background: #28a745;
+    background: #007bff;
     color: white;
     border: none;
     border-radius: 8px;
