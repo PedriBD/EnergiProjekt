@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="da">
 <head>
@@ -6,24 +7,14 @@
     <title>Energiskærm</title>
     <link rel="stylesheet" href="style.css"/>
     <script defer src="script.js"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div id="app" class="background">
-        <div id="status-view" class="card">
-            <h1 id="status" class="status low">LOW</h1>
-            <p id="summary">Grøn strøm er rigeligt til hallen i dag!</p>
-            <button id="to-community">Se fællesskabets bidrag</button>
-        </div>
-
-        <div id="community-view" class="card hidden">
-            <img src="icon.png" alt="Community Icon" class="icon"/>
-            <h1 id="community-status" class="status low">LOW</h1>
-            <p id="community-message">
-                Energifællesskabet sørger i dag for, at hallen kan lyse og varme hele aftenen – med grøn strøm fra solen. Tak for at være med!
-            </p>
-            <p id="weather">UV: 6, Partly Cloudy</p>
-            <button id="to-status">Tilbage</button>
+    <div class="container">
+        <div class="card">
+            <h1 id="level" class="status">...</h1>
+            <p id="status-text">Henter status...</p>
+            <p id="message">...</p>
+            <button onclick="window.location.href='community.html'">Se fællesskabets bidrag</button>
         </div>
     </div>
 </body>

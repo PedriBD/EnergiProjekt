@@ -1,9 +1,13 @@
-document.getElementById("to-community").addEventListener("click", () => {
-    document.getElementById("status-view").classList.add("hidden");
-    document.getElementById("community-view").classList.remove("hidden");
-});
 
-document.getElementById("to-status").addEventListener("click", () => {
-    document.getElementById("community-view").classList.add("hidden");
-    document.getElementById("status-view").classList.remove("hidden");
-});
+fetch("status.json")
+  .then(response => response.json())
+  .then(data => {
+    const level = data.level.toLowerCase();
+    document.getElementById("level").textContent = data.level;
+    document.getElementById("level").classList.add(level); // fx .low
+    document.getElementById("status-text").textContent = data.status;
+    document.getElementById("message").textContent = data.message;
+  })
+  .catch(err => {
+    console.error("Fejl ved indlæsning af status.json:", err);
+  });
