@@ -21,7 +21,6 @@ const slides = [
     text: "Med solens hjælp kan badmintonspillerne nyde træning i grøn energi!"
   }
 ];
-
 let index = 0;
 function renderSlide() {
   const s = slides[index];
@@ -29,15 +28,12 @@ function renderSlide() {
   document.getElementById("slide-title").textContent = s.title;
   document.getElementById("slide-text").textContent = s.text;
 }
-
 function prevSlide() {
   index = (index - 1 + slides.length) % slides.length;
   renderSlide();
 }
-
 function nextSlide() {
   index = (index + 1) % slides.length;
   renderSlide();
 }
-
 document.addEventListener("DOMContentLoaded", renderSlide);
