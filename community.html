@@ -11,10 +11,13 @@
 <body>
   <div class="container">
     <div class="card">
-      <img src="icon.png" alt="Ikon" class="icon"/>
-      <h1 id="status-text">...</h1>
-      <p id="message">...</p>
-      <p id="weather">...</p>
+      <img id="slide-icon" class="icon" src="" alt="Ikon" />
+      <h2 id="slide-title">...</h2>
+      <p id="slide-text">...</p>
+      <div style="margin: 1em 0;">
+        <button onclick="prevSlide()">◀</button>
+        <button onclick="nextSlide()">▶</button>
+      </div>
       <button onclick="window.location.href='index.html'">Tilbage</button>
     </div>
   </div>
