@@ -1,9 +1,33 @@
 
 <!DOCTYPE html>
 <html lang="da">
-<head><meta charset="UTF-8" /><title>Status</title></head>
-<body style="font-family:sans-serif;text-align:center;margin-top:20%;">
-<h1>Statusvisning placeholder</h1>
-<p><a href="community.html">Gå til fællesskabsskærm</a></p>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Statusvisning</title>
+  <link rel="stylesheet" href="style.css" />
+  <script>
+    async function loadStatus() {
+      try {
+        const res = await fetch('status.json');
+        const data = await res.json();
+        document.getElementById("status-label").textContent = data.status;
+        document.getElementById("status-message").textContent = data.message;
+      } catch (e) {
+        document.getElementById("status-label").textContent = "Ingen data";
+        document.getElementById("status-message").textContent = "Kunne ikke hente status.";
+      }
+    }
+    window.onload = loadStatus;
+  </script>
+</head>
+<body>
+  <div class="container">
+    <div class="card">
+      <h2 id="status-label">Henter status...</h2>
+      <p id="status-message">...</p>
+      <button onclick="window.location.href='community.html'">Se fællesskabets bidrag</button>
+    </div>
+  </div>
 </body>
 </html>
