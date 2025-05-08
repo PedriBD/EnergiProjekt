@@ -4,12 +4,16 @@ body {
     font-family: 'Poppins', sans-serif;
     background: url('background.jpg') no-repeat center center fixed;
     background-size: cover;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .container {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    width: 100%;
 }
 .card {
     background: rgba(255, 255, 255, 0.95);
@@ -17,20 +21,25 @@ body {
     border-radius: 16px;
     text-align: center;
     max-width: 500px;
+    width: 90%;
     box-shadow: 0 4px 20px rgba(0,0,0,0.1);
 }
 .status.low { color: green; }
 .status.medium { color: orange; }
 .status.high { color: red; }
+
 .icon {
-    width: 100px;
-    margin-bottom: 1em;
+    width: 140px;
+    height: auto;
+    object-fit: contain;
+    margin: 0 auto 1em;
+    display: block;
 }
 button {
-    margin-top: 1em;
+    margin-top: 1.5em;
     padding: 0.75em 1.5em;
     font-size: 1em;
-    background: #007bff;
+    background: #28a745;
     color: white;
     border: none;
     border-radius: 8px;
