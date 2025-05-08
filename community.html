@@ -2,21 +2,20 @@
 <!DOCTYPE html>
 <html lang="da">
 <head>
-    <meta charset="UTF-8">
-    <title>Fællesskabsstatus</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Fællesskabsskærm</title>
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="community.js"></script>
 </head>
-<body class="community">
+<body>
+  <div class="container">
     <div class="card">
-        <img src="icon.png" alt="Ikon" class="icon">
-        <h1>🌞 Tak for dit bidrag!</h1>
-        <p>Energifællesskabet gør det muligt for mange aktiviteter at køre på grøn strøm i dag.</p>
-        <button onclick="goBack()">Tilbage</button>
+      <h1 id="status-text">...</h1>
+      <p id="message">...</p>
+      <p id="weather">...</p>
+      <button onclick="window.location.href='index.html'">Tilbage</button>
     </div>
-    <script>
-        function goBack() {
-            window.location.href = 'index.html';
-        }
-    </script>
+  </div>
 </body>
 </html>
