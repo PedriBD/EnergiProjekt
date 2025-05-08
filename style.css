@@ -27,12 +27,14 @@ body {
   flex-direction: column;
   justify-content: space-between;
 }
+
 .icon {
   width: 180px;
-  height: auto;
+  max-height: 180px;
   object-fit: contain;
   margin: 0 auto;
 }
+
 h2 {
   font-size: 2em;
   margin: 0.5em 0;
