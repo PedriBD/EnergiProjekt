@@ -70,6 +70,6 @@ button {
   background: rgba(0,0,0,0.1);
   color: #333;
 }
-.card.low { background-color: #2F855A; color: white; }
+.card.low { background-color: #38a169; color: white; }
 .card.medium { background-color: #D69E2E; color: white; }
-.card.high { background-color: #C53030; color: white; }
+.card.high { background-color: #e53e3e; color: white; }
