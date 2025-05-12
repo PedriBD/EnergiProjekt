@@ -1,33 +1,51 @@
 
-const demoSlides = [
-  {
-    icon: "icon_handball.png",
-    title: "Håndboldtræning i aften",
-    text: "Energifællesskabet sørger for lys og varme til håndbold i hallen hele aftenen!",
-    level: "low"
-  },
-  {
-    icon: "icon_football.png",
-    title: "Fodbold for alle",
-    text: "Den grønne strøm gør det muligt at spille fodbold med god samvittighed!",
-    level: "medium"
-  },
-  {
-    icon: "icon_petanque.png",
-    title: "Petanque og hygge",
-    text: "Petanquebanen holdes kørende på lokal solenergi – tak for dit bidrag!",
-    level: "high"
-  },
-  {
-    icon: "icon_badminton.png",
-    title: "Badminton på grøn strøm",
-    text: "Med solens hjælp kan badmintonspillerne nyde træning i grøn energi!",
-    level: "medium"
-  }
-];
+const allSlides = {
+  low: [
+    {
+      icon: "icon_handball.png",
+      title: "Fuld energi til hallen",
+      text: "Alt kører på sol – nu er det tid til at bruge energien med god samvittighed!",
+      level: "low"
+    },
+    {
+      icon: "icon_badminton.png",
+      title: "Badminton og varme bade",
+      text: "Energien er grøn og rigelig – fællesskabet giver plads til lidt ekstra komfort.",
+      level: "low"
+    }
+  ],
+  medium: [
+    {
+      icon: "icon_badminton.png",
+      title: "Badminton med omtanke",
+      text: "Fællesskabet leverer strøm nok til aktiviteter – men vi tænker stadig grønt.",
+      level: "medium"
+    },
+    {
+      icon: "icon_football.png",
+      title: "Fodbold og fællesskab",
+      text: "Fodboldtræningen kan køre videre – takket være grøn lokal energi.",
+      level: "medium"
+    }
+  ],
+  high: [
+    {
+      icon: "icon_petanque.png",
+      title: "Rolig petanque-aften",
+      text: "Selv med lav produktion holder vi lyset tændt – tak fordi du sparer på strømmen.",
+      level: "high"
+    },
+    {
+      icon: "icon_handball.png",
+      title: "Begrænset halvarme",
+      text: "Hallen er i brug, men vi bruger kun det nødvendige – vi passer på ressourcerne.",
+      level: "high"
+    }
+  ]
+};
 
-let filteredSlides = [];
 let slideIndex = 0;
+let filteredSlides = [];
 let communityDemo = localStorage.getItem("demoMode") === "true";
 
 function updateDemoButton() {
@@ -61,21 +79,21 @@ function toggleCommunityDemo() {
   localStorage.setItem("demoMode", communityDemo);
   updateDemoButton();
   if (communityDemo) {
-    prepareFilteredSlides();
+    prepareSlidesFromLevel();
     renderSlide();
   }
 }
 
-function prepareFilteredSlides() {
-  const currentLevel = localStorage.getItem("demoStatusLevel") || "low";
-  filteredSlides = demoSlides.filter(slide => slide.level === currentLevel);
+function prepareSlidesFromLevel() {
+  const level = localStorage.getItem("demoStatusLevel") || "low";
+  filteredSlides = allSlides[level] || [];
   slideIndex = 0;
 }
 
 document.addEventListener("DOMContentLoaded", () => {
   updateDemoButton();
   if (communityDemo) {
-    prepareFilteredSlides();
+    prepareSlidesFromLevel();
     renderSlide();
   }
 });
