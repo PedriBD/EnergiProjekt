@@ -16,11 +16,13 @@ const demoData = [
     message: "Strømmen er knap – men vi holder stadig gang i caféen!"
   }
 ];
+
 let demoIndex = 0;
 let demoMode = localStorage.getItem("demoMode") === "true";
 
 function updateDemoButton() {
-  document.getElementById("demo-toggle").textContent = "Demo-tilstand: " + (demoMode ? "TIL" : "FRA");
+  const btn = document.getElementById("demo-toggle");
+  if (btn) btn.textContent = "Demo: " + (demoMode ? "TIL" : "FRA");
 }
 
 function renderStatus(data) {
@@ -49,6 +51,7 @@ function toggleDemo() {
   localStorage.setItem("demoMode", demoMode);
   updateDemoButton();
   if (demoMode) {
+    localStorage.setItem("demoStatusLevel", demoData[demoIndex].level);
     renderStatus(demoData[demoIndex]);
   } else {
     loadRealStatus();
@@ -58,12 +61,15 @@ function toggleDemo() {
 function nextDemo() {
   if (!demoMode) return;
   demoIndex = (demoIndex + 1) % demoData.length;
-  renderStatus(demoData[demoIndex]);
+  const current = demoData[demoIndex];
+  localStorage.setItem("demoStatusLevel", current.level);
+  renderStatus(current);
 }
 
 window.onload = () => {
   updateDemoButton();
   if (demoMode) {
+    localStorage.setItem("demoStatusLevel", demoData[demoIndex].level);
     renderStatus(demoData[demoIndex]);
   } else {
     loadRealStatus();
