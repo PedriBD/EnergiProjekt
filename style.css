@@ -27,14 +27,15 @@ body {
   flex-direction: column;
   justify-content: space-between;
 }
-
+.card.low { background-color: rgba(220, 255, 220, 0.95); }
+.card.medium { background-color: rgba(255, 245, 200, 0.95); }
+.card.high { background-color: rgba(255, 220, 220, 0.95); }
 .icon {
   width: 180px;
   max-height: 180px;
   object-fit: contain;
   margin: 0 auto;
 }
-
 h2 {
   font-size: 2em;
   margin: 0.5em 0;
@@ -52,31 +53,4 @@ button {
   border: none;
   border-radius: 8px;
   cursor: pointer;
-}
-
-
-.fade-in {
-  animation: fadeIn 0.5s forwards;
-}
-.fade-out {
-  animation: fadeOut 0.5s forwards;
-}
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-@keyframes fadeOut {
-  from { opacity: 1; }
-  to { opacity: 0; }
-}
-
-
-.card.low {
-  background-color: rgba(220, 255, 220, 0.95); /* lys grøn */
-}
-.card.medium {
-  background-color: rgba(255, 245, 200, 0.95); /* lys orange */
-}
-.card.high {
-  background-color: rgba(255, 220, 220, 0.95); /* lys rød */
 }

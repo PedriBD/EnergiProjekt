@@ -6,27 +6,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Statusvisning</title>
   <link rel="stylesheet" href="style.css" />
-  <script>
-    async function loadStatus() {
-      try {
-        const res = await fetch('status.json');
-        const data = await res.json();
-        document.getElementById("status-label").textContent = data.status;
-        document.getElementById("status-message").textContent = data.message;
-        document.querySelector(".card").classList.add(data.level.toLowerCase());
-      } catch (e) {
-        document.getElementById("status-label").textContent = "Ingen data";
-        document.getElementById("status-message").textContent = "Kunne ikke hente status.";
-      }
-    }
-    window.onload = loadStatus;
-  </script>
+  <script defer src="demo.js"></script>
 </head>
 <body>
   <div class="container">
     <div class="card">
+      <img src="icon_petanque.png" alt="Petanque ikon" class="icon"/>
       <h2 id="status-label">Henter status...</h2>
       <p id="status-message">...</p>
+      <div>
+        <button onclick="toggleDemo()" id="demo-toggle">Demo-tilstand: ...</button>
+        <button onclick="nextDemo()">▶ Skift status</button>
+      </div>
       <button onclick="window.location.href='community.html'">Se fællesskabets bidrag</button>
     </div>
   </div>
