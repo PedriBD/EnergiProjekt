@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Statusvisning</title>
   <link rel="stylesheet" href="style.css" />
-  <script defer src="demoMode_unified.js"></script>
+  <script defer src="demo.js"></script>
 </head>
 <body>
   <div class="container">
@@ -15,11 +15,11 @@
       <h2 id="status-label">Henter status...</h2>
       <p id="status-message">...</p>
       <div>
+        <button onclick="toggleDemo()" id="demo-toggle">Demo-tilstand: ...</button>
         <button onclick="nextDemo()">▶ Skift status</button>
       </div>
       <button onclick="window.location.href='community.html'">Se fællesskabets bidrag</button>
     </div>
   </div>
-  <button id="demo-toggle" onclick="toggleDemo()">Demo: ...</button>
 </body>
 </html>
