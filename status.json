@@ -1,8 +1,8 @@
 {
-  "level": "LOW",
-  "status": "Grøn strøm er rigeligt til hallen i dag!",
-  "message": "Energifællesskabet sørger i dag for, at hallen kan lyse og varme hele aftenen – med grøn strøm fra solen. Tak for at være med!",
-  "uv": 6,
-  "condition": "Partly Cloudy",
-  "updated": "2025-05-08T17:32:28.087424"
+  "status": "Snart er der gr\u00f8n str\u00f8m til f\u00e6llesskabet",
+  "message": "Der er str\u00f8m nok i f\u00e6llesskabet til h\u00e5ndboldtr\u00e6ning og aktiviteter i hallen \u2013 takket v\u00e6re lokal solenergi.",
+  "uv": 3.8,
+  "condition": "Partly cloudy",
+  "level": "medium",
+  "updated": "2025-05-12T21:00:00"
 }
