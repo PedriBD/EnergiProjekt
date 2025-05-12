@@ -3,30 +3,34 @@ const demoSlides = [
   {
     icon: "icon_handball.png",
     title: "Håndboldtræning i aften",
-    text: "Energifællesskabet sørger for lys og varme til håndbold i hallen hele aftenen!"
+    text: "Energifællesskabet sørger for lys og varme til håndbold i hallen hele aftenen!",
+    level: "low"
   },
   {
     icon: "icon_football.png",
     title: "Fodbold for alle",
-    text: "Den grønne strøm gør det muligt at spille fodbold med god samvittighed!"
+    text: "Den grønne strøm gør det muligt at spille fodbold med god samvittighed!",
+    level: "medium"
   },
   {
     icon: "icon_petanque.png",
     title: "Petanque og hygge",
-    text: "Petanquebanen holdes kørende på lokal solenergi – tak for dit bidrag!"
+    text: "Petanquebanen holdes kørende på lokal solenergi – tak for dit bidrag!",
+    level: "high"
   },
   {
     icon: "icon_badminton.png",
     title: "Badminton på grøn strøm",
-    text: "Med solens hjælp kan badmintonspillerne nyde træning i grøn energi!"
+    text: "Med solens hjælp kan badmintonspillerne nyde træning i grøn energi!",
+    level: "medium"
   }
 ];
 
 let slideIndex = 0;
-let communityDemo = localStorage.getItem("communityDemo") === "true";
+let communityDemo = localStorage.getItem("demoMode") === "true";
 
 function updateDemoButton() {
-  document.getElementById("demo-toggle").textContent = "Demo-tilstand: " + (communityDemo ? "TIL" : "FRA");
+  document.getElementById("demo-toggle").textContent = "Demo: " + (communityDemo ? "TIL" : "FRA");
 }
 
 function renderSlide() {
@@ -34,6 +38,8 @@ function renderSlide() {
   document.getElementById("slide-icon").src = s.icon;
   document.getElementById("slide-title").textContent = s.title;
   document.getElementById("slide-text").textContent = s.text;
+  const card = document.querySelector(".card");
+  card.className = "card " + s.level;
 }
 
 function prevSlide() {
@@ -50,16 +56,12 @@ function nextSlide() {
 
 function toggleCommunityDemo() {
   communityDemo = !communityDemo;
-  localStorage.setItem("communityDemo", communityDemo);
+  localStorage.setItem("demoMode", communityDemo);
   updateDemoButton();
-  if (communityDemo) {
-    renderSlide();
-  }
+  if (communityDemo) renderSlide();
 }
 
 document.addEventListener("DOMContentLoaded", () => {
   updateDemoButton();
-  if (communityDemo) {
-    renderSlide();
-  }
+  if (communityDemo) renderSlide();
 });

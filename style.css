@@ -16,7 +16,6 @@ body {
   width: 100%;
 }
 .card {
-  background: #ffffff;
   padding: 2.5em;
   border-radius: 20px;
   text-align: center;
@@ -27,20 +26,9 @@ body {
   flex-direction: column;
   justify-content: space-between;
 }
-.card.low {
-  background-color: #38a169; /* mørk grøn */
-  color: white;
-}
 
-.card.medium {
-  background-color: #ecc94b; /* mørk gul */
-  color: white;
-}
 
-.card.high {
-  background-color: #e53e3e; /* mørk rød */
-  color: white;
-}
+
 .icon {
   width: 180px;
   max-height: 180px;
@@ -65,3 +53,21 @@ button {
   border-radius: 8px;
   cursor: pointer;
 }
+#demo-toggle {
+  position: fixed;
+  bottom: 12px;
+  right: 12px;
+  background: rgba(0,0,0,0.1);
+  color: #333;
+  font-size: 0.8em;
+  padding: 0.4em 0.6em;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  z-index: 10;
+}
+
+
+.card.low { background-color: #38a169; color: white; }     /* mørk grøn */
+.card.medium { background-color: #dd6b20; color: white; }  /* mørk orange */
+.card.high { background-color: #e53e3e; color: white; }    /* mørk rød */
