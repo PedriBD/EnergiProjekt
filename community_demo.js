@@ -12,6 +12,18 @@ const allSlides = {
       title: "Badminton og varme bade",
       text: "Energien er grøn og rigelig – fællesskabet giver plads til lidt ekstra komfort.",
       level: "low"
+    },
+    {
+      icon: "icon_handball.png",
+      title: "Fuld gang i hallen!",
+      text: "Hallen kører 100% på sol – tak fordi I er med i fællesskabet.",
+      level: "low"
+    },
+    {
+      icon: "icon_petanque.png",
+      title: "Petanque og fællesskab",
+      text: "Nu er der grøn strøm til både spil og fællesspisning!",
+      level: "low"
     }
   ],
   medium: [
@@ -26,6 +38,18 @@ const allSlides = {
       title: "Fodbold og fællesskab",
       text: "Fodboldtræningen kan køre videre – takket være grøn lokal energi.",
       level: "medium"
+    },
+    {
+      icon: "icon_handball.png",
+      title: "Træning som normalt",
+      text: "Der er strøm nok – men vi holder stadig fokus på grøn drift i hallen.",
+      level: "medium"
+    },
+    {
+      icon: "icon_petanque.png",
+      title: "Petanque med varme i klubhuset",
+      text: "Tak for at bruge energien ansvarligt – der er nok til hygge og kaffe.",
+      level: "medium"
     }
   ],
   high: [
@@ -39,6 +63,18 @@ const allSlides = {
       icon: "icon_handball.png",
       title: "Begrænset halvarme",
       text: "Hallen er i brug, men vi bruger kun det nødvendige – vi passer på ressourcerne.",
+      level: "high"
+    },
+    {
+      icon: "icon_handball.png",
+      title: "Håndbold med omtanke",
+      text: "Lyset er tændt, men vi begrænser opvarmningen – tak fordi I støtter fællesskabet.",
+      level: "high"
+    },
+    {
+      icon: "icon_petanque.png",
+      title: "Udendørs hygge",
+      text: "Petanque kan spilles uden strøm – den bedste måde at spare i dag.",
       level: "high"
     }
   ]
