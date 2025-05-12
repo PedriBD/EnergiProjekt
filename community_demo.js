@@ -26,6 +26,7 @@ const demoSlides = [
   }
 ];
 
+let filteredSlides = [];
 let slideIndex = 0;
 let communityDemo = localStorage.getItem("demoMode") === "true";
 
@@ -34,7 +35,8 @@ function updateDemoButton() {
 }
 
 function renderSlide() {
-  const s = demoSlides[slideIndex];
+  if (!filteredSlides.length) return;
+  const s = filteredSlides[slideIndex];
   document.getElementById("slide-icon").src = s.icon;
   document.getElementById("slide-title").textContent = s.title;
   document.getElementById("slide-text").textContent = s.text;
@@ -44,13 +46,13 @@ function renderSlide() {
 
 function prevSlide() {
   if (!communityDemo) return;
-  slideIndex = (slideIndex - 1 + demoSlides.length) % demoSlides.length;
+  slideIndex = (slideIndex - 1 + filteredSlides.length) % filteredSlides.length;
   renderSlide();
 }
 
 function nextSlide() {
   if (!communityDemo) return;
-  slideIndex = (slideIndex + 1) % demoSlides.length;
+  slideIndex = (slideIndex + 1) % filteredSlides.length;
   renderSlide();
 }
 
@@ -58,10 +60,22 @@ function toggleCommunityDemo() {
   communityDemo = !communityDemo;
   localStorage.setItem("demoMode", communityDemo);
   updateDemoButton();
-  if (communityDemo) renderSlide();
+  if (communityDemo) {
+    prepareFilteredSlides();
+    renderSlide();
+  }
+}
+
+function prepareFilteredSlides() {
+  const currentLevel = localStorage.getItem("demoStatusLevel") || "low";
+  filteredSlides = demoSlides.filter(slide => slide.level === currentLevel);
+  slideIndex = 0;
 }
 
 document.addEventListener("DOMContentLoaded", () => {
   updateDemoButton();
-  if (communityDemo) renderSlide();
+  if (communityDemo) {
+    prepareFilteredSlides();
+    renderSlide();
+  }
 });
