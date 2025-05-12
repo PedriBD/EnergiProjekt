@@ -1,4 +1,3 @@
-
 body {
   margin: 0;
   font-family: 'Poppins', sans-serif;
@@ -9,12 +8,14 @@ body {
   justify-content: center;
   align-items: center;
 }
+
 .container {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
 }
+
 .card {
   padding: 2.5em;
   border-radius: 20px;
@@ -27,22 +28,23 @@ body {
   justify-content: space-between;
 }
 
-
-
 .icon {
   width: 180px;
   max-height: 180px;
   object-fit: contain;
   margin: 0 auto;
 }
+
 h2 {
   font-size: 2em;
   margin: 0.5em 0;
 }
+
 p {
   font-size: 1.3em;
   margin: 0.5em 0;
 }
+
 button {
   margin: 0.4em;
   padding: 1em 2em;
@@ -53,6 +55,7 @@ button {
   border-radius: 8px;
   cursor: pointer;
 }
+
 #demo-toggle {
   position: fixed;
   bottom: 12px;
@@ -67,7 +70,18 @@ button {
   z-index: 10;
 }
 
+/* Status-farver */
+.card.low {
+  background-color: #3B914D; /* Mørk grøn */
+  color: white;
+}
 
-.card.low { background-color: #38a169; color: white; }     /* mørk grøn */
-.card.medium { background-color: #ecc94b; color: white; }  /* mørk orange */
-.card.high { background-color: #e53e3e; color: white; }    /* mørk rød */
+.card.medium {
+  background-color: #ecc94b; /* Gul nuance */
+  color: #333;
+}
+
+.card.high {
+  background-color: #D64545; /* Klar rød */
+  color: white;
+}
