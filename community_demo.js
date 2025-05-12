@@ -85,7 +85,8 @@ let filteredSlides = [];
 let communityDemo = localStorage.getItem("demoMode") === "true";
 
 function updateDemoButton() {
-  document.getElementById("demo-toggle").textContent = "Demo: " + (communityDemo ? "TIL" : "FRA");
+  const btn = document.getElementById("demo-toggle");
+  if (btn) btn.textContent = "Demo: " + (communityDemo ? "TIL" : "FRA");
 }
 
 function renderSlide() {
@@ -99,13 +100,13 @@ function renderSlide() {
 }
 
 function prevSlide() {
-  if (!communityDemo) return;
+  if (!filteredSlides.length) return;
   slideIndex = (slideIndex - 1 + filteredSlides.length) % filteredSlides.length;
   renderSlide();
 }
 
 function nextSlide() {
-  if (!communityDemo) return;
+  if (!filteredSlides.length) return;
   slideIndex = (slideIndex + 1) % filteredSlides.length;
   renderSlide();
 }
@@ -115,21 +116,44 @@ function toggleCommunityDemo() {
   localStorage.setItem("demoMode", communityDemo);
   updateDemoButton();
   if (communityDemo) {
-    prepareSlidesFromLevel();
+    const demoLevel = localStorage.getItem("demoStatusLevel") || "low";
+    filteredSlides = allSlides[demoLevel];
     renderSlide();
+  } else {
+    fetchStatusLevel();
   }
 }
 
-function prepareSlidesFromLevel() {
-  const level = localStorage.getItem("demoStatusLevel") || "low";
-  filteredSlides = allSlides[level] || [];
-  slideIndex = 0;
+function fetchStatusLevel() {
+  fetch("status.json")
+    .then(res => res.json())
+    .then(data => {
+      const level = deriveLevel(data.status);
+      filteredSlides = allSlides[level];
+      renderSlide();
+    })
+    .catch(() => {
+      filteredSlides = allSlides["medium"];
+      renderSlide();
+    });
+}
+
+function deriveLevel(statusText) {
+  if (!statusText) return "medium";
+  statusText = statusText.toLowerCase();
+  if (statusText.includes("lav")) return "high";
+  if (statusText.includes("snart") || statusText.includes("næsten")) return "medium";
+  if (statusText.includes("høj") || statusText.includes("grøn strøm")) return "low";
+  return "medium";
 }
 
 document.addEventListener("DOMContentLoaded", () => {
   updateDemoButton();
   if (communityDemo) {
-    prepareSlidesFromLevel();
+    const demoLevel = localStorage.getItem("demoStatusLevel") || "low";
+    filteredSlides = allSlides[demoLevel];
     renderSlide();
+  } else {
+    fetchStatusLevel();
   }
 });
