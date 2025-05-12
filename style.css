@@ -27,9 +27,20 @@ body {
   flex-direction: column;
   justify-content: space-between;
 }
-.card.low { background-color: rgba(220, 255, 220, 0.95); }
-.card.medium { background-color: rgba(255, 245, 200, 0.95); }
-.card.high { background-color: rgba(255, 220, 220, 0.95); }
+.card.low {
+  background-color: #38a169; /* mørk grøn */
+  color: white;
+}
+
+.card.medium {
+  background-color: #d69e2e; /* mørk gul */
+  color: white;
+}
+
+.card.high {
+  background-color: #e53e3e; /* mørk rød */
+  color: white;
+}
 .icon {
   width: 180px;
   max-height: 180px;
