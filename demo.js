@@ -1,21 +1,22 @@
+@ -0,0 +1,71 @@
 
 const demoData = [
-  {
-    level: "low",
-    status: "Grøn strøm er rigeligt i dag!",
-    message: "Hallens aktiviteter kører 100% på solenergi."
-  },
-  {
-    level: "medium",
-    status: "Solproduktionen er OK",
-    message: "Der er energi til de fleste aktiviteter."
-  },
-  {
-    level: "high",
-    status: "Lav produktion i dag",
-    message: "Strømmen er knap – men vi holder stadig gang i caféen!"
-  }
-];
+      {
+        level: "low",
+        status: "Grøn strøm er rigeligt i dag!",
+        message: "Hallens aktiviteter kører 100% på solenergi."
+      },
+      {
+        level: "medium",
+        status: "Solproduktionen er OK",
+        message: "Der er energi til de fleste aktiviteter."
+      },
+      {
+        level: "high",
+        status: "Lav produktion i dag",
+        message: "Strømmen er knap – men vi holder stadig gang i caféen!"
+      }
+    ];
 let demoIndex = 0;
 let demoMode = localStorage.getItem("demoMode") === "true";
 
@@ -33,15 +34,15 @@ function renderStatus(data) {
 
 function loadRealStatus() {
   fetch("status.json")
-    .then(res => res.json())
-    .then(data => renderStatus(data))
-    .catch(() => {
-      renderStatus({
-        level: "medium",
-        status: "Ingen forbindelse",
-        message: "Kunne ikke hente live data."
+      .then(res => res.json())
+      .then(data => renderStatus(data))
+      .catch(() => {
+        renderStatus({
+          level: "medium",
+          status: "Ingen forbindelse",
+          message: "Kunne ikke hente live data."
+        });
       });
-    });
 }
 
 function toggleDemo() {

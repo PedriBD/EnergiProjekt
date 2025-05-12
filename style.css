@@ -1,32 +1,8 @@
+@ -27,14 +27,15 @@ body {
+                     flex-direction: column;
+                     justify-content: space-between;
+                   }
 
-body {
-  margin: 0;
-  font-family: 'Poppins', sans-serif;
-  background: url('background.jpg') no-repeat center center fixed;
-  background-size: cover;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-}
-.card {
-  background: #ffffff;
-  padding: 2.5em;
-  border-radius: 20px;
-  text-align: center;
-  width: 700px;
-  height: 520px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
 .card.low { background-color: rgba(220, 255, 220, 0.95); }
 .card.medium { background-color: rgba(255, 245, 200, 0.95); }
 .card.high { background-color: rgba(255, 220, 220, 0.95); }
@@ -36,21 +12,38 @@ body {
   object-fit: contain;
   margin: 0 auto;
 }
+
 h2 {
   font-size: 2em;
   margin: 0.5em 0;
-}
-p {
-  font-size: 1.3em;
-  margin: 0.5em 0;
-}
-button {
-  margin: 0.4em;
-  padding: 1em 2em;
-  font-size: 1.2em;
-  background: #28a745;
-  color: white;
-  border: none;
+  @ -53,30 +54,3 @@ button {
   border-radius: 8px;
   cursor: pointer;
 }
+
+
+  .fade-in {
+    animation: fadeIn 0.5s forwards;
+  }
+  .fade-out {
+    animation: fadeOut 0.5s forwards;
+  }
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  @keyframes fadeOut {
+    from { opacity: 1; }
+    to { opacity: 0; }
+  }
+
+
+  .card.low {
+    background-color: rgba(220, 255, 220, 0.95); /* lys grøn */
+  }
+  .card.medium {
+    background-color: rgba(255, 245, 200, 0.95); /* lys orange */
+  }
+  .card.high {
+    background-color: rgba(255, 220, 220, 0.95); /* lys rød */
+  }
