@@ -72,6 +72,7 @@ function nextDemo() {
 }
 
 window.onload = () => {
+  document.getElementById("status-toggle").style.display = demoMode ? "block" : "none";
   updateDemoButton();
   if (demoMode) {
     localStorage.setItem("demoStatusLevel", demoData[demoIndex].level);

@@ -75,3 +75,18 @@ button {
   background-color: #D64545;
   color: white;
 }
+
+
+#status-toggle {
+  position: fixed;
+  bottom: 12px;
+  left: 12px;
+  background: rgba(0,0,0,0.1);
+  color: #333;
+  font-size: 0.8em;
+  padding: 0.4em 0.6em;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  z-index: 10;
+}
