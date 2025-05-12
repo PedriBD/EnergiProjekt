@@ -50,43 +50,26 @@ button {
   border-radius: 8px;
   cursor: pointer;
 }
-#demo-toggle {
+#demo-toggle, #status-toggle {
   position: fixed;
   bottom: 12px;
+  font-size: 0.8em;
+  padding: 0.4em 0.6em;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  z-index: 10;
+}
+#demo-toggle {
   right: 12px;
   background: rgba(0,0,0,0.1);
   color: #333;
-  font-size: 0.8em;
-  padding: 0.4em 0.6em;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  z-index: 10;
 }
-.card.low {
-  background-color: #3B914D;
-  color: white;
-}
-.card.medium {
-  background-color: #ecc94b;
-  color: #333;
-}
-.card.high {
-  background-color: #D64545;
-  color: white;
-}
-
-
 #status-toggle {
-  position: fixed;
-  bottom: 12px;
-  left: 12px;
+  right: 95px;
   background: rgba(0,0,0,0.1);
   color: #333;
-  font-size: 0.8em;
-  padding: 0.4em 0.6em;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  z-index: 10;
 }
+.card.low { background-color: #2F855A; color: white; }
+.card.medium { background-color: #D69E2E; color: white; }
+.card.high { background-color: #C53030; color: white; }
