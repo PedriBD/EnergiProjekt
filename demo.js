@@ -1,19 +1,20 @@
 
+
 const demoData = [
   {
     level: "low",
-    status: "Grøn strøm er rigeligt i dag!",
-    message: "Hallens aktiviteter kører 100% på solenergi."
+    status: "DER ER GRØN OVERSKUDSSTRØM TIL JER",
+    message: "Udnyt den lokalt producerede grønne strøm og deltag i fællesskabet"
   },
   {
     level: "medium",
-    status: "Solproduktionen er OK",
-    message: "Der er energi til de fleste aktiviteter."
+    status: "GRØN STRØM ER LIGE PÅ TRAPPERNE",
+    message: "Der forventes snart lokalt produceret grøn strøm - vær klar til at bidrage"
   },
   {
     level: "high",
-    status: "Lav produktion i dag",
-    message: "Strømmen er knap – men vi holder stadig gang i caféen!"
+    status: "INGEN GRØN OVERSKUDSSTRØM I ENERGIFÆLLESSKABET",
+    message: "Solcelleproduktionen er lav - overvej om I kan tilpasse jeres energiforbrug"
   }
 ];
 
